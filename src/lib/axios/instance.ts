@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const headers = {
-  Accept: "application/json",
-  "Content-Type": "application/json",
-  "Cache-Control": "no-cache",
-  Expires: 0,
-};
+// const headers = {
+//   Accept: "application/json",
+//   "Content-Type": "application/json",
+//   "Cache-Control": "no-cache",
+//   Expires: 0,
+// };
 
 const getBaseURL = () => {
   const hostname =
@@ -27,7 +27,7 @@ const getBaseURL = () => {
 
 const instance = axios.create({
   baseURL: getBaseURL(),
-  headers,
+  // headers,
 });
 
 export default instance;
