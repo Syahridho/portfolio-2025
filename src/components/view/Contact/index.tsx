@@ -6,7 +6,6 @@ import GridPattern from "@/components/ui/grid-pattern";
 import BlurIn from "@/components/ui/blur-in";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import ContainerLayout from "@/components/layout/ContainerLayout";
 
 const ContactView = () => {
   const methods = useReactHookForm();
@@ -38,31 +37,31 @@ const ContactView = () => {
   };
 
   return (
-     <ContainerLayout>
-    <div className="max-w-[600px] mx-auto">
-      <BlurIn
-        word="Contact Me"
-        className="text-4xl font-bold text-black dark:text-white "
-      />
-      <h1 className="mb-8">Lets talk to me</h1>
+    <>
+      <div className="max-w-[600px] mx-auto">
+        <BlurIn
+          word="Contact Me"
+          className="text-4xl font-bold text-black dark:text-white "
+        />
+        <h1 className="mb-8">Lets talk to me</h1>
 
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <FormContact isLoading={isLoading} />
-        </form>
-      </FormProvider>
+        <FormProvider {...methods}>
+          <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <FormContact isLoading={isLoading} />
+          </form>
+        </FormProvider>
 
-      <GridPattern
-        width={20}
-        height={16}
-        x={-1}
-        y={-1}
-        className={cn(
-          "[mask-image:linear-gradient(to_top_left,white,transparent,transparent)] -z-50"
-        )}
-      />
-    </div>
-    </ContainerLayout>
+        <GridPattern
+          width={20}
+          height={16}
+          x={-1}
+          y={-1}
+          className={cn(
+            "[mask-image:linear-gradient(to_top_left,white,transparent,transparent)] -z-50"
+          )}
+        />
+      </div>
+    </>
   );
 };
 

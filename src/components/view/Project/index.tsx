@@ -10,8 +10,8 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import ContainerLayout from "@/components/layout/ContainerLayout";
 import { Skeleton } from "@/components/ui/skeleton";
+// import {projects} from "@/utils/resume.ts";
 
 const BlurIn = dynamic(() => import("@/components/ui/blur-in"), {
   ssr: false,
@@ -90,7 +90,7 @@ const ProjectView = () => {
   };
 
   return (
-    <ContainerLayout>
+    <>
       <BlurIn
         word="Projects"
         className="text-4xl font-bold text-black dark:text-white "
@@ -152,7 +152,7 @@ const ProjectView = () => {
           </PaginationContent>
         </Pagination>
       </div>
-    </ContainerLayout>
+    </>
   );
 };
 

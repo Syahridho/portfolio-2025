@@ -17,7 +17,6 @@ import { Skeleton } from "@/components/ui/skeleton";
 import BlurFade from "@/components/ui/blur-fade";
 import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
 import instance from "@/lib/axios/instance";
-import ContainerLayout from "@/components/layout/ContainerLayout";
 
 const fetchData = async () => {
   const { data } = await instance.get("/api/certificate");
@@ -51,7 +50,7 @@ const CertificateView = () => {
   console.log(data);
 
   return (
-    <ContainerLayout>
+    <>
       <BlurIn
         key={"up"}
         word="Certificate"
@@ -125,7 +124,7 @@ const CertificateView = () => {
           </AnimatedShinyText>
         </Link>
       </div>
-    </ContainerLayout>
+    </>
   );
 };
 

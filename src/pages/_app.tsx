@@ -4,6 +4,8 @@ import type { AppProps } from "next/app";
 import { Roboto } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import ContainerLayout from "@/components/layout/ContainerLayout";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -12,11 +14,22 @@ const roboto = Roboto({
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
+  const router = useRouter();
+
+  const pathsWithContainer = ["/", "/project", "/certificate", "/contact"];
+
+  const isContainerLayout = pathsWithContainer.includes(router.pathname);
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className={roboto.className}>
-        <Component {...pageProps} />
+        {isContainerLayout ? (
+          <ContainerLayout>
+            <Component {...pageProps} />
+          </ContainerLayout>
+        ) : (
+          <Component {...pageProps} />
+        )}
         <Toaster />
       </div>
     </QueryClientProvider>
