@@ -10,9 +10,10 @@ export default async function handler(
     const frondEnd = await retrieveData("certificateFrontend");
     const backEnd = await retrieveData("certificateBackend");
     const devOps = await retrieveData("certificateDevops");
+    const mobile = await retrieveData("certificateMobile");
     const mechine = await retrieveData("certificateMechine");
     const other = await retrieveData("certificateOther");
-    if (frondEnd && backEnd && devOps && mechine && other) {
+    if (frondEnd && backEnd && devOps && mechine && mobile && other) {
       res.status(200).json({
         statusCode: 200,
         message: "Success get certificate",
