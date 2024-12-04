@@ -27,7 +27,7 @@ const ProjectCard = dynamic(
   () => import("@/components/container/ProjectCard"),
   {
     ssr: false,
-    loading: () => <Skeleton className="w-96 md:w-[350px] h-56" />,
+    loading: () => <Skeleton className="w-[100%] h-56" />,
   }
 );
 

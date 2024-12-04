@@ -102,12 +102,12 @@ const CertificateView = () => {
           ))
         ) : (
           <>
-            <Skeleton className="w-[250px] h-[175px]" />
-            <Skeleton className="w-[250px] h-[175px]" />
-            <Skeleton className="w-[250px] h-[175px]" />
-            <Skeleton className="w-[250px] h-[175px]" />
-            <Skeleton className="w-[250px] h-[175px]" />
-            <Skeleton className="w-[250px] h-[175px]" />
+            <Skeleton className="w-[100%] h-[175px]" />
+            <Skeleton className="w-[100%] h-[175px]" />
+            <Skeleton className="w-[100%] h-[175px]" />
+            <Skeleton className="w-[100%] h-[175px]" />
+            <Skeleton className="w-[100%] h-[175px]" />
+            <Skeleton className="w-[100%] h-[175px]" />
           </>
         )}
       </div>

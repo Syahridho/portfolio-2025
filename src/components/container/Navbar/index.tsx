@@ -114,7 +114,7 @@ const Navbar: NextPage = () => {
                       )}
                       <Image
                         src={
-                          "https://syahridho.github.io/assets/profile-Sg5TBd7P.jpg"
+                          "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fhome%2Fmsib.jpg?alt=media&token=4300e2de-ca81-4e68-9ef1-95d9c0eb6dee"
                         }
                         loading="lazy"
                         width={100}
@@ -138,7 +138,7 @@ const Navbar: NextPage = () => {
                     )}
                     <Image
                       src={
-                        "https://media.licdn.com/dms/image/v2/D5603AQGWo4CLtxQywA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728105177466?e=1735776000&v=beta&t=_YPuOCPFvap6RxXjkMpiCP0mYiXFX6V2n0qkM9UHbMg"
+                        "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fhome%2Fmsib.jpg?alt=media&token=4300e2de-ca81-4e68-9ef1-95d9c0eb6dee"
                       }
                       width={300}
                       height={300}
