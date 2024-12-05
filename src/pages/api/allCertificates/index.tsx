@@ -17,7 +17,7 @@ export default async function handler(
       res.status(200).json({
         statusCode: 200,
         message: "Success get certificate",
-        data: { frondEnd, backEnd, devOps, mechine, other },
+        data: { frondEnd, backEnd, devOps, mechine, mobile, other },
       });
     } else {
       res.status(404).json({
