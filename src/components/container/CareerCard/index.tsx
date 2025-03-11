@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const CareerCard = ({ career }: any) => {
   return (
@@ -10,7 +10,6 @@ const CareerCard = ({ career }: any) => {
             alt="Profile"
             className="object-contain"
           />
-          <AvatarFallback>Unilak</AvatarFallback>
         </Avatar>
       </div>
 

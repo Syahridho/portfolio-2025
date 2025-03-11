@@ -61,9 +61,9 @@ export const socialMedia: any = [
 export const home = {
   name: "Syahridho Arjuna Syahputra",
   location: "Pekanbaru, Riau, Indonesia",
-  role: "Front End Developer",
+  role: "Web Developer",
   description:
-    "I am a Frontend Developer with a focus on creating aesthetic and responsive user interfaces. With skills in HTML, CSS, JavaScript,Tailwind, React JS and others, I have developed a variety of projects,ranging from business websites to interactive web applications.",
+    "I am a Web Developer with a focus on creating aesthetically pleasing and responsive user interfaces. With skills focusing on Bootstrap, Tailwind, PHP, React JS, Next JS and Laravel. I have developed a variety of projects, ranging from business websites to interactive web applications.",
   cv: "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcv%2FCVSyahridhoArjunaSyahputra.pdf?alt=media&token=ae16c803-5722-4478-a3b4-a1d933c87cdb",
   tech: {
     iconsUp: [
@@ -93,46 +93,6 @@ export const home = {
       { icon: SiVisualstudiocode, title: "VS Code", color: "#007ACC" },
     ],
   },
-  career: [
-    {
-      title: "Cakaplah.com",
-      dates: "November 2024 - Now",
-      location: "Indonesia, Riau",
-      description: "Internship.",
-      image:
-        "https://www.cakaplah.com/assets/news/15112017/cakaplah_rgc2z_13388.png",
-      links: [],
-    },
-    {
-      title: "Lancang Kuning University",
-      dates: "July 2022 - Now",
-      location: "Indonesia, Riau",
-      description: "Informatics Engineering.",
-      image: "https://assets.siakadcloud.com/public/unilak-favicon.png",
-      mlh: "",
-      links: [],
-    },
-    {
-      title: "Dashnet ISP",
-      dates: "November 2021 - Desember 2021",
-      location: "Indonesia, Riau",
-      description: "Internship.",
-      image:
-        "https://dash.net.id/wp-content/uploads/2017/10/cropped-dash-32x32.png",
-      mlh: "",
-      links: [],
-    },
-    {
-      title: "SMK N 5 Pekanbaru",
-      dates: "July 2019 - July 2022",
-      location: "Indonesia, Riau",
-      description: "Computer and network engineering.",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS0GEkrE04jgi8eHfy8Y21hCwRJEkW0NHN5g&s",
-      mlh: "",
-      links: [],
-    },
-  ],
 };
 
 const url: string =
