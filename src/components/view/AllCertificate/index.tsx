@@ -19,29 +19,19 @@ import BlurIn from "@/components/ui/blur-in";
 import { FaArrowLeft } from "react-icons/fa6";
 import Link from "next/link";
 import BlurFade from "@/components/ui/blur-fade";
-// import { certificates } from "@/utils/resume";
 import instance from "@/lib/axios/instance";
-import { QueryClient, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
+
+interface Certificates {
+  name: string;
+  image: string;
+  expires: string;
+}
 
 const fetch = async () => {
   const { data } = await instance.get("/api/allCertificates");
   return data;
 };
-
-export async function getServerSideProps() {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery({
-    queryKey: ["allCertificates"],
-    queryFn: fetch,
-  });
-
-  return {
-    props: {
-      dehydratedState: queryClient.getQueryData(["allCertificates"]),
-    },
-  };
-}
 
 const AllCertificate = () => {
   const [select, setSelect] = useState("frondEnd");
@@ -72,51 +62,69 @@ const AllCertificate = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="frondEnd" defaultChecked>
-              FrondEnd Developer
+              FrondEnd Developer {data?.data?.["frondEnd"].length}
             </SelectItem>
-            <SelectItem value="backEnd">BackEnd Developer</SelectItem>
-            <SelectItem value="devOps">DevOps Developer</SelectItem>
-            <SelectItem value="mechine">Mechine Learning</SelectItem>
-            <SelectItem value="mobile">Mobile App Developer</SelectItem>
-            <SelectItem value="other">other</SelectItem>
+            <SelectItem value="backEnd">
+              BackEnd Developer {data?.data?.["backEnd"].length}
+            </SelectItem>
+            <SelectItem value="devOps">
+              DevOps Developer {data?.data?.["devOps"].length}
+            </SelectItem>
+            <SelectItem value="mechine">
+              Mechine Learning {data?.data?.["mechine"].length}
+            </SelectItem>
+            <SelectItem value="mobile">
+              Mobile App Developer {data?.data?.["mobile"].length}
+            </SelectItem>
+            <SelectItem value="other">
+              Other {data?.data?.["other"].length}
+            </SelectItem>
           </SelectContent>
         </Select>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 justify-items-center gap-x-4 gap-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-6 w-full">
         {!isLoading ? (
-          data?.data?.[select].map((certificate: any, index: number) => (
-            <BlurFade key={index} delay={0.12 * index}>
-              <Dialog>
-                <DialogTrigger asChild>
-                  <Button
-                    variant="outline"
-                    className="p-0 m-0 h-64 w-96 sm:h-48 sm:w-64 xl:h-40 xl:w-56"
-                  >
-                    <Card>
+          data?.data?.[select]
+            .sort(
+              (a: Certificates, b: Certificates) =>
+                new Date(a.expires).getTime() - new Date(b.expires).getTime()
+            )
+            .reverse()
+            .map((certificate: Certificates, index: number) => (
+              <BlurFade key={index} delay={0.12 * index}>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="p-0 m-0 h-full w-full sm:h-48 sm:w-64 xl:h-40 xl:w-56"
+                    >
+                      <Card>
+                        <Image
+                          src={certificate.image}
+                          width={350}
+                          height={200}
+                          alt="certificate"
+                          className="object-cover w-full h-full"
+                        />
+                      </Card>
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
                       <Image
                         src={certificate.image}
-                        width={350}
-                        height={200}
+                        width={1028}
+                        height={1028}
                         alt="certificate"
-                        className="object-cover w-full h-full"
+                        className={`w-full object-contain ${
+                          certificate.name === "MTCNA" && "h-screen"
+                        }`}
                       />
-                    </Card>
-                  </Button>
-                </DialogTrigger>
-                <DialogContent>
-                  <DialogHeader>
-                    <Image
-                      src={certificate.image}
-                      width={700}
-                      height={700}
-                      alt="certificate"
-                      className="w-full object-contain"
-                    />
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
-            </BlurFade>
-          ))
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              </BlurFade>
+            ))
         ) : (
           <h1>Loading...</h1>
         )}

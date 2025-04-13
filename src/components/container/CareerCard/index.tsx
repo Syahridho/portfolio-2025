@@ -19,7 +19,6 @@ interface Career {
 }
 
 const CareerCard = ({ career }: { career: Career }) => {
-  console.log(career);
   return (
     <div className="relative ml-6 py-8 pl-10 border-l border-dashed flex flex-col gap-1.5">
       <div className="absolute -left-6 top-6 flex items-center justify-center bg-white rounded-full z-10">
@@ -43,10 +42,7 @@ const CareerCard = ({ career }: { career: Career }) => {
           career.certificates.map((certificate: string, index: number) => (
             <Dialog key={index}>
               <DialogTrigger asChild>
-                <Button
-                  variant="outline"
-                  className="p-0 m-0 w-24 h-18 xl:w-32 xl:h-24 transition duration-500 hover:shadow"
-                >
+                <Button className="p-0 m-0 w-24 h-18 xl:w-32 xl:h-24 transition duration-500 hover:shadow">
                   <Card className="w-full h-full">
                     <Image
                       src={certificate}

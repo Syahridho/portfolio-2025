@@ -105,7 +105,7 @@ const HomeView = () => {
                 <CareerCard key={index} career={item} />
               ))
           ) : (
-            <h1>Loading</h1>
+            <h1>Loading...</h1>
           )}
         </div>
       </HeaderHome>

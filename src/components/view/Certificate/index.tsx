@@ -15,7 +15,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import BlurFade from "@/components/ui/blur-fade";
-import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import instance from "@/lib/axios/instance";
 
 const fetchData = async () => {
@@ -23,31 +23,13 @@ const fetchData = async () => {
   return data.data;
 };
 
-export async function getServerSideProps() {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery({
-    queryKey: ["certificate"],
-    queryFn: fetchData,
-  });
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-  };
-}
-
 const CertificateView = () => {
-  // const [loadingImage, setLoadingImage] = useState(true);
   const [modalImageLoading, setModalImageLoading] = useState(true);
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["certificate"],
     queryFn: fetchData,
   });
-
-  console.log(data);
 
   return (
     <>
@@ -58,7 +40,7 @@ const CertificateView = () => {
       />
       <h1 className="mb-8">I have certificates from several bootcamps.</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data ? (
+        {!isLoading ? (
           data?.map((certificate: any, index: number) => (
             <BlurFade key={index} delay={0.13 * index}>
               <Dialog>
@@ -88,11 +70,11 @@ const CertificateView = () => {
                         width={700}
                         height={700}
                         alt={certificate.name}
+                        onLoad={() => setModalImageLoading(false)}
                         className={cn(
-                          "w-full object-contain",
+                          "w-full object-contain transition-opacity duration-500 ease-in-out",
                           modalImageLoading ? "opacity-0" : "opacity-100"
                         )}
-                        onLoad={() => setModalImageLoading(false)}
                       />
                     </div>
                   </DialogHeader>

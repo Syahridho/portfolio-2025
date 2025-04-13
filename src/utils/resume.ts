@@ -15,48 +15,12 @@ import {
   SiFigma,
   SiGithub,
   SiGit,
-  SiVisualstudiocode,
   SiAlpinedotjs,
   SiShadcnui,
   SiPython,
 } from "react-icons/si";
-
-import {
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-  FaTelegram,
-  FaRegEnvelope,
-  FaBootstrap,
-} from "react-icons/fa";
-
-export const socialMedia: any = [
-  {
-    name: "Email",
-    href: "mailto:syahridhosyahputra@gmail.com",
-    icon: FaRegEnvelope,
-  },
-  {
-    name: "Linkedin",
-    href: "https://www.linkedin.com/in/syahridho/",
-    icon: FaLinkedin,
-  },
-  {
-    name: "Github",
-    href: "https://github.com/Syahridho",
-    icon: FaGithub,
-  },
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/syahridhoa_/",
-    icon: FaInstagram,
-  },
-  {
-    name: "Telegram",
-    href: "https://t.me/syahridhoo",
-    icon: FaTelegram,
-  },
-];
+import { BiLogoVisualStudio } from "react-icons/bi";
+import { FaBootstrap } from "react-icons/fa";
 
 export const home = {
   name: "Syahridho Arjuna Syahputra",
@@ -90,129 +54,7 @@ export const home = {
       { icon: SiFigma, title: "Figma", color: "#F24E1E" },
       { icon: SiGithub, title: "GitHub", color: "#181717" },
       { icon: SiGit, title: "Git", color: "#F05032" },
-      { icon: SiVisualstudiocode, title: "VS Code", color: "#007ACC" },
+      { icon: BiLogoVisualStudio, title: "VS Code", color: "#007ACC" },
     ],
   },
-};
-
-const url: string =
-  "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcertificates%2Ffrondend%2Fdicoding-belajar-membuat-front-end-web-untuk-pemula.webp?alt=media&token=4d1827af-69d3-4352-b8d7-e28a425b72bf";
-
-export const certificates = {
-  main: [
-    {
-      url: url,
-      role: "fronend",
-    },
-    {
-      url: url,
-      role: "backend",
-    },
-    {
-      url: url,
-      role: "devops",
-    },
-    {
-      url: url,
-      role: "ui/ux",
-    },
-    {
-      url: url,
-      role: "ai",
-    },
-    {
-      url: url,
-      role: "flutter",
-    },
-  ],
-  all: [
-    {
-      url: url,
-      role: "frondend",
-    },
-    {
-      url: url,
-      role: "backend",
-    },
-    {
-      url: url,
-      role: "backend",
-    },
-    {
-      url: url,
-      role: "devops",
-    },
-    {
-      url: url,
-      role: "devops",
-    },
-    {
-      url: url,
-      role: "devops",
-    },
-    {
-      url: url,
-      role: "mobile",
-    },
-    {
-      url: url,
-      role: "mobile",
-    },
-    {
-      url: url,
-      role: "mobile",
-    },
-    {
-      url: url,
-      role: "mobile",
-    },
-    {
-      url: url,
-      role: "mechine",
-    },
-    {
-      url: url,
-      role: "mechine",
-    },
-    {
-      url: url,
-      role: "mechine",
-    },
-    {
-      url: url,
-      role: "mechine",
-    },
-    {
-      url: url,
-      role: "mechine",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-    {
-      url: url,
-      role: "other",
-    },
-  ],
 };
