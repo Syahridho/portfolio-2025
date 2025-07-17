@@ -26,7 +26,7 @@ const BlurFade = dynamic(() => import("@/components/ui/blur-fade"), {
 const ProjectCard = dynamic(
   () => import("@/components/container/ProjectCard"),
   {
-    ssr: false,
+    ssr: true,
     loading: () => <Skeleton className="w-[100%] h-56" />,
   }
 );

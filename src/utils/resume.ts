@@ -25,9 +25,9 @@ import { FaBootstrap } from "react-icons/fa";
 export const home = {
   name: "Syahridho Arjuna Syahputra",
   location: "Pekanbaru, Riau, Indonesia",
-  role: "Web Developer",
+  role: "Programmer",
   description:
-    "I am a Web Developer with a focus on creating aesthetically pleasing and responsive user interfaces. With skills focusing on Bootstrap, Tailwind, PHP, React JS, Next JS and Laravel. I have developed a variety of projects, ranging from business websites to interactive web applications.",
+    "I am a Programmer with a focus on creating aesthetically pleasing and responsive user interfaces. With skills focusing on Bootstrap, Tailwind, PHP, React JS, Next JS and Laravel. I have developed a variety of projects, ranging from business websites to interactive web applications.",
   cv: "https://firebasestorage.googleapis.com/v0/b/next-app-study.appspot.com/o/assets%2Fcv%2FCVSyahridhoArjunaSyahputra.pdf?alt=media&token=ae16c803-5722-4478-a3b4-a1d933c87cdb",
   tech: {
     iconsUp: [
