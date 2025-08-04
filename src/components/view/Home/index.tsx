@@ -11,6 +11,7 @@ import { MarqueeTech } from "@/components/container/Marquee";
 import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { IoSchoolOutline } from "react-icons/io5";
 import { DiGithubBadge } from "react-icons/di";
+import { BiMedal } from "react-icons/bi";
 import BlurFade from "@/components/ui/blur-fade";
 import instance from "@/lib/axios/instance";
 import { QueryClient, dehydrate, useQuery } from "@tanstack/react-query";
@@ -100,6 +101,24 @@ const HomeView = () => {
         <div className="divide-y divide-dashed my-4">
           {data ? (
             [...data?.career]
+              .reverse()
+              .map((item: any, index: any) => (
+                <CareerCard key={index} career={item} />
+              ))
+          ) : (
+            <h1>Loading...</h1>
+          )}
+        </div>
+      </HeaderHome>
+
+      <HeaderHome
+        title={"Achievement"}
+        subTitle={"Event & Community"}
+        icon={BiMedal}
+      >
+        <div className="divide-y divide-dashed my-4">
+          {data ? (
+            [...data?.achievement]
               .reverse()
               .map((item: any, index: any) => (
                 <CareerCard key={index} career={item} />

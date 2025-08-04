@@ -57,7 +57,7 @@ const AllCertificate = () => {
       <h1 className="mb-4">I have certificates from several bootcamps.</h1>
       <div className="mt-4 mb-8">
         <Select onValueChange={(e) => setSelect(e)} defaultValue={select}>
-          <SelectTrigger className="w-[180px]">
+          <SelectTrigger className="w-[200px]">
             <SelectValue placeholder={"FrondEnd Developer"} />
           </SelectTrigger>
           <SelectContent>

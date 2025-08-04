@@ -9,11 +9,12 @@ export default async function handler(
   if (req.method === "GET") {
     const response = await retrieveData("home");
     const career = await retrieveData("career");
+    const achievement = await retrieveData("achievement");
     if (response) {
       res.status(200).json({
         statusCode: 200,
         message: "Success get home",
-        data: { response, career },
+        data: { response, career, achievement },
       });
     } else {
       res.status(404).json({

@@ -7,7 +7,7 @@ const HeaderHome = ({ title, subTitle, icon: Icon, children }: any) => {
           {title}
         </h1>
       </div>
-      <h1 className="mb-2 text-slate-700">{subTitle}</h1>
+      <h1 className="mb-2 ms-2 text-slate-700">{subTitle}</h1>
       {children}
     </div>
   );
