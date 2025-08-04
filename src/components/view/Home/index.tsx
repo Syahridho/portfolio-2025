@@ -113,7 +113,7 @@ const HomeView = () => {
 
       <HeaderHome
         title={"Achievement"}
-        subTitle={"Events & Community"}
+        subTitle={"Event & Community"}
         icon={BiMedal}
       >
         <div className="divide-y divide-dashed my-4">
